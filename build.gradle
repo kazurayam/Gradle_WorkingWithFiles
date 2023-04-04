@@ -4,3 +4,12 @@
  * This is a general purpose Gradle build.
  * Learn more about Gradle by exploring our samples at https://docs.gradle.org/8.0.2/samples
  */
+tasks.register('copyReport', Copy) {
+    from file("build.gradle")
+    into layout.buildDirectory.dir("toArchive")
+}
+
+tasks.register('importReport', Copy) {
+    from file("/Users/kazuakiurayama/tmp/junit4ks/junit4ks.prj")
+    into layout.buildDirectory.dir("toArchive")
+}
